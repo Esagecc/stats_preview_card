@@ -38,6 +38,10 @@ body {
     border-radius: 12px 12px 0 0;
 }
 
+.picture2 {
+    display: none;
+}
+
 .overlay {
     position: absolute;
     height: 245px;
@@ -45,10 +49,14 @@ body {
     z-index: 1;
     background-color: var(--violet);
     opacity: 0.4;
+    filter: saturate(3);
+    filter: contrast(2);
     border-radius: 12px 12px 0 0;
 }
 
 .card {
+    display: flex;
+    flex-direction: column;
     background-color: var(--dk-blue-card);
     width: 335px;
     margin: 90px auto;
@@ -102,11 +110,6 @@ p, .stat-word {
     font-weight: 300;
 }
 
-
-
-
-
-
 .attribution { 
     font-size: 11px; 
     text-align: center; 
@@ -117,4 +120,53 @@ p, .stat-word {
     color: hsl(228, 45%, 44%); 
 }
 
+@media (min-width: 500px){
+    .card {
+        width: 1120px;
+        flex-direction:row-reverse;
+        padding-bottom: 0;
+        margin: 160px auto;
+    }
 
+    .image {
+        padding-bottom: 0;
+        align-items: flex-end;
+        justify-content: end;
+    }
+    .picture {
+        display: none;
+    }
+
+    .picture2 {
+        display: block;
+        width: 560px;
+        height: 468px;
+        border-radius: 0 12px 12px 0;
+    }
+
+    .overlay {
+        width: 560px;
+        height: 468px;
+        border-radius: 0 12px 12px 0;
+    }
+
+    .text {
+        padding: 60px;
+        text-align: left;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    p {
+        padding-bottom: 80px;
+        font-size: 16px;
+        line-height: 23px;
+    }
+
+    .total-stats {
+        display: flex;
+        justify-content: space-between;
+    }
+}
